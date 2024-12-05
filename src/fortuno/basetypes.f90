@@ -203,10 +203,10 @@ contains
 
     if (.not. associated(this%storage_)) return
     do ii = 1, this%nitems
-      select type (item => this%storage_(ii)%item)
-      class is (test_suite_base)
-        call item%tests%free()
-      end select
+      ! select type (item => this%storage_(ii)%item)
+      ! class is (test_suite_base)
+      !   call item%tests%free()
+      ! end select
       deallocate(this%storage_(ii)%item)
     end do
     deallocate(this%storage_)
